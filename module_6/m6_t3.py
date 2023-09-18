@@ -1,13 +1,14 @@
 #Module 6, task 3
 
 while True:
-    gallons = float(input("How many gallons of gasoline?: ")
+    gallons = float(input("Enter the amount of gasoline in U.S gallons: "))
 
 
-    def converter:
-        liters = gallons/
-        print(f"{gallons} gallons of gasoline is equal to {liters} liters")
-        return
+    def converter():
+        liters = gallons*3.7854
+        if gallons > 0:
+            print(f"{gallons} U.S gallons of gasoline is equal to {liters} liters of gasoline")
+
 
     converter()
 

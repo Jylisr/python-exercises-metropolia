@@ -1,15 +1,13 @@
 #Module 6, task 1
 import random
 
-dice = random.randint(1, 6)
-
-
 def roll():
-    dice = random.randint(1, 6)
-    print(f"You rolled {dice}")
+    return random.randint(1, 6)
+
 
 
 while True:
-    roll()
-    if dice == 6:
+    result = roll()
+    print(f"You rolled {result}")
+    if result == 6:
         break
