@@ -9,13 +9,17 @@ class Car:
 
     def accelerate(self):
         if self.cur_spd == 0 and self.cur_spd <= self.max_spd:
-            self.cur_spd + 30
-            self.cur_spd + 70
-            self.cur_spd + 50
+            self.cur_spd += 30
             print(self.cur_spd)
+            self.cur_spd += 70
+            print(self.cur_spd)
+            self.cur_spd += 50
+            print(self.cur_spd)
+            self.cur_spd -= 200
+            if self.cur_spd < 0:
+                self.cur_spd = 0
+                print(self.cur_spd)
 
-    def brake(self):
-        self.cur_spd - 200
         
         
     
