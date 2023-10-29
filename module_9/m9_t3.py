@@ -30,9 +30,9 @@ class Car:
 hours = int  
 car1 = Car("ABC-123", 142)
 
-print(car1.reg_num)
-print(car1.max_spd)
-print(car1.cur_spd)
-print(car1.tra_dis)
+print(f"Registration number: {car1.reg_num}")
+print(f"Maximum speed: {car1.max_spd}")
+print(f"Current speed: {car1.cur_spd}")
+print(f"Distance travelled: {car1.tra_dis}")
 
 car1.drive(1.5)
