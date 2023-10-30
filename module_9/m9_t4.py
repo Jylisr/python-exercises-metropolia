@@ -39,14 +39,15 @@ race_distance = 10000
 hour = 1
 
 while all(car.tra_dis < race_distance for car in cars):
-    print(f"\nHour {hour} of the race:")
+    print(f"Hour {hour} of the race:")
     for car in cars:
-        car.accelerate()
-        car.drive()
+        car.accelerate(random.randint( -10, 15))
+        car.drive(hour)
         print_table(cars)
         hour += 1
 
-print("\nRace Results:")
+print("Race Results:")
 print_table(cars)
+print(cars)
 
 
