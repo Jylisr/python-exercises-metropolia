@@ -8,16 +8,21 @@ class Car:
         self.cur_spd = 0
         self.tra_dis = 0
 
-    def accelerate(self):
-        change_in_speed = random.randint(-10, 15)
-        self.cur_spd += change_in_speed
-        if self.cur_spd < 0:
-            self.cur_spd = 0
-        elif self.cur_spd > self.max_spd:
-            self.cur_spd = self.max_spd
+    def accelerate(self, change_speed):
+        self.cur_spd += change_speed
+        if self.cur_spd < 0 or self.cur_spd > self.max_spd:
+            if self.cur_spd < 0:
+                self.cur_spd = 0
+            elif self.cur_spd > self.max_spd:
+                self.cur_spd = self.max_spd
+        else:
+            print(self.cur_spd)
+            return self.cur_spd
 
-    def drive(self):
-        self.tra_dis += self.cur_spd
+    def drive(self, hours):
+        self.tra_dis += hours * self.cur_spd
+        print(self.tra_dis)
+        return(self.tra_dis)
 
 def print_table(cars):
     print("{:<10} {:<15} {:<15} {:<15}".format("Reg Num", "Max Speed (km/h)", "Current Speed (km/h)", "Distance (km)"))

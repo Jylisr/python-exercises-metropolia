@@ -7,23 +7,22 @@ class Car:
         self.cur_spd = 60
         self.tra_dis = 2000
 
-    def accelerate(self):
-        if self.cur_spd == 0 and self.cur_spd <= self.max_spd:
-            self.cur_spd += 30
-            print(self.cur_spd)
-            self.cur_spd += 70
-            print(self.cur_spd)
-            self.cur_spd += 50
-            print(self.cur_spd)
-            self.cur_spd -= 200
+    def accelerate(self, change_speed):
+        self.cur_spd += change_speed
+        if self.cur_spd < 0 or self.cur_spd > self.max_spd:
             if self.cur_spd < 0:
                 self.cur_spd = 0
-                print(self.cur_spd)
+            elif self.cur_spd > self.max_spd:
+                self.cur_spd = self.max_spd
+        else:
+            print(self.cur_spd)
+            return self.cur_spd
                 
                 
     def drive(self, hours):
-        self.tra_dis = hours * self.cur_spd + self.tra_dis
+        self.tra_dis += hours * self.cur_spd
         print(self.tra_dis)
+        return(self.tra_dis)
 
         
         
