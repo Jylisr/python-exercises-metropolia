@@ -7,27 +7,31 @@ class Car:
         self.cur_spd = 0
         self.tra_dis = 0
 
-    def accelerate(self):
-        if self.cur_spd == 0 and self.cur_spd <= self.max_spd:
-            self.cur_spd += 30
-            print(self.cur_spd)
-            self.cur_spd += 70
-            print(self.cur_spd)
-            self.cur_spd += 50
-            print(self.cur_spd)
-            self.cur_spd -= 200
+
+    def accelerate(self, change_speed):
+        self.cur_spd += change_speed
+        if self.cur_spd < 0 or self.cur_spd > self.max_spd:
             if self.cur_spd < 0:
                 self.cur_spd = 0
-                print(self.cur_spd)
+            elif self.cur_spd > self.max_spd:
+                self.cur_spd = self.max_spd
+        else:
+            print(self.cur_spd)
+            return self.cur_spd
+
+
+
 
         
         
     
 car1 = Car("ABC-123", 142)
 
-print(car1.reg_num)
-print(car1.max_spd)
-print(car1.cur_spd)
-print(car1.tra_dis)
 
-car1.accelerate()
+car1.accelerate(30)
+car1.accelerate(70)
+print(car1.cur_spd)
+car1.accelerate(50)
+print(car1.cur_spd)
+car1.accelerate(-200)
+print(car1.cur_spd)
