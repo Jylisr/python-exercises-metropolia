@@ -25,38 +25,28 @@ class Car:
         print(self.tra_dis)
         return(self.tra_dis)
 
-
-class Race:
-
-    def __init__(self):
-        pass
-
-
 def print_table(cars):
     print("{:<10} {:<15} {:<15} {:<15}".format("Reg Num", "Max Speed (km/h)", "Current Speed (km/h)", "Distance (km)"))
     for car in cars:
         print("{:<10} {:<15} {:<15} {:<15}".format(car.reg_num, car.max_spd, car.cur_spd, car.tra_dis))
 
-def main():
-    cars = []
-    for i in range(1, 11):
-        reg_num = "ABC-" + str(i)
-        max_spd = random.randint(100, 200)
-        cars.append(Car(reg_num, max_spd))
+cars = []
+for i in range(1, 11):
+    reg_num = "ABC-" + str(i)
+    max_spd = random.randint(100, 200)
+    cars.append(Car(reg_num, max_spd))
 
-    race_distance = 10000
-    hour = 1
+race_distance = 10000
+hour = 1
 
-    while all(car.tra_dis < race_distance for car in cars):
-        print(f"\nHour {hour} of the race:")
-        for car in cars:
-            car.accelerate()
-            car.drive()
+while all(car.tra_dis < race_distance for car in cars):
+    print(f"Hour {hour} of the race:")
+    for car in cars:
+        car.accelerate(random.randint( -10, 15))
+        car.drive(hour)
         print_table(cars)
         hour += 1
 
-    print("\nRace Results:")
-    print_table(cars)
-
-if __name__ == "__main__":
-    main()
+print("Race Results:")
+print_table(cars)
+print(cars)
