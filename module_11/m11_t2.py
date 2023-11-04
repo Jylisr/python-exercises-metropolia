@@ -20,10 +20,10 @@ class Car:
             print(self.cur_spd)
             return self.cur_spd
 
-    def drive(self, hours):
+    def drive(self, hours, speed):
         self.tra_dis += hours * self.cur_spd
         print(self.tra_dis)
-        return(self.tra_dis)
+        self.km_driven = hours * speed
 
 def print_table(cars):
     print("{:<10} {:<15} {:<15} {:<15}".format("Reg Num", "Max Speed (km/h)", "Current Speed (km/h)", "Distance (km)"))
@@ -58,4 +58,12 @@ class GasolineCar(Car):
         super().__init__(reg_num, max_spd)
         self.gas_vol = gas_vol
 
-print()
+electric_car = ElectricCar(reg_num="ABC-15", max_spd=180, bat_cap=52.5)
+gasoline_car = GasolineCar(reg_num="ACD-123", max_spd=165, gas_vol=32.3)
+electric_car_spd = 180
+gasoline_car_spd = 165
+electric_car.drive(hours=3, speed=electric_car_spd)
+gasoline_car.drive(hours=3, speed=gasoline_car_spd)
+
+print(f"Electric Car ({electric_car.reg_num}): {electric_car.km_driven} km")
+print(f"Gasoline Car ({gasoline_car.reg_num}): {gasoline_car.km_driven} km")
