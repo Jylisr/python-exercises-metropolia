@@ -65,5 +65,5 @@ gasoline_car_spd = 165
 electric_car.drive(hours=3, speed=electric_car_spd)
 gasoline_car.drive(hours=3, speed=gasoline_car_spd)
 
-print(f"Electric Car ({electric_car.reg_num}): {electric_car.km_driven} km")
-print(f"Gasoline Car ({gasoline_car.reg_num}): {gasoline_car.km_driven} km")
+print(f"Electric Car {electric_car.reg_num}: {electric_car.km_driven} km")
+print(f"Gasoline Car {gasoline_car.reg_num}: {gasoline_car.km_driven} km")
