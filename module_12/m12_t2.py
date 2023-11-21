@@ -11,5 +11,3 @@ try:
     print(response)
 except:
     print("Error")
-
-#Can't call, requires subscription
